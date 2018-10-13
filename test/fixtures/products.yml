@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  maker: MyString
+  NET_weight: 1
+  price: 1
+  priceperweight: 1.5
+
+two:
+  name: MyString
+  maker: MyString
+  NET_weight: 1
+  price: 1
+  priceperweight: 1.5
