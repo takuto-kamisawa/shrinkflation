@@ -1,0 +1,32 @@
+<%= form_for @member do |f| %>
+  <p>
+  <%= f.label :maker , "メーカー" %>
+  <%= f.text_field :maker %>
+  </p>
+ 
+  <p>
+  <%= f.label :name , "商品名" %>
+  <%= f.text_field :name %>
+  </p>
+  
+  <p>
+  <%= f.label :NET_weight , "内容量" %>
+  <%= f.text_field :NET_weight %>
+  </p>
+  
+  <p>
+  <%= f.label :price , "価格" %>
+  <%= f.text_field :price %>
+  </p>
+ 
+  <p>
+  <%= f.label :priceperweight , "グラム単価" %>
+  <%= f.text_field :priceperweight %>
+  </p>
+  
+  <%= f.submit %>
+ 
+<% end %>
+  <%= f.submit %>
+ 
+<% end %>
