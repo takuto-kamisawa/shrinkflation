@@ -1,4 +1,4 @@
-<%= form_for @member do |f| %>
+<%= form_for @product do |f| %>
   <p>
   <%= f.label :maker , "メーカー" %>
   <%= f.text_field :maker %>
@@ -30,3 +30,5 @@
   <%= f.submit %>
  
 <% end %>
+
+<%= link_to "トップページ" root_path %>

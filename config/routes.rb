@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root "products#index"
+  root "products#index" 
   resources :products
-  
+   
   get 'home/index'
   get 'home/detail'
 
