@@ -5,8 +5,6 @@
 
 <p>
   <% @products.each do |product| %>
-  <%= product.name %>
-
   <% end %>
 </p>
 
@@ -28,11 +26,13 @@
 <tbody>
 <% @products.each do |product| %>
 <tr>
-  <th scope="row"><%= product.maker %></th>
+  <th scope="row"><%= product.maker.name %></th>
   <td><%= product.name %></td>
       <td><%= product.NET_weight %></td>
   <td><%= product.price %></td>
-      <td><%= product.priceperweight %></td>
+  <td><%= product.priceperweight %></td>
+　　　<!--ここにグラム単価の計算を入れる-->
+      <!--<td><%=  %></td>-->
   <td>###</td>
 </tr>
 <% end %>

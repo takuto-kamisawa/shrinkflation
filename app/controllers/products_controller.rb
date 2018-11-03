@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @makers = Maker.all 
   end
   
   def create
@@ -18,7 +19,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-     params.require(:product).permit(:maker, :name, :NET_weight, :price, :priceperweight)
+     params.require(:product).permit(:maker_id, :name, :NET_weight, :price, :priceperweight)
   end
 end   
 #<% select :name, :maker, :NET_weight, :price, :priceperweight  %>

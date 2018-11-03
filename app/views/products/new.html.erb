@@ -1,7 +1,14 @@
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-heading">新規登録フォーム</div>
+        <div class="panel-body">
+          <form>
 <%= form_for @product do |f| %>
   <p>
-  <%= f.label :maker , "メーカー" %>
-  <%= f.text_field :maker %>
+  <%= f.label :maker_id , "メーカー" %>
+  <!--<%= f.text_field :maker %>-->
+  <!--<%= f.select :maker, ["ブルボン", "カルビー", "森永製菓"],  :prompt => "選択してください" %>-->
+  <%= f.select :maker_id, @makers.map{|m| [m.name, m.id]} %>
   </p>
  
   <p>
@@ -10,22 +17,38 @@
   </p>
   
   <p>
-  <%= f.label :NET_weight , "内容量" %>
+  <%= f.label :NET_weight , "内容量(g)" %>
   <%= f.text_field :NET_weight %>
   </p>
   
   <p>
-  <%= f.label :price , "価格" %>
+  <%= f.label :price , "価格(円)" %>
   <%= f.text_field :price %>
   </p>
- 
-  <p>
-  <%= f.label :priceperweight , "グラム単価" %>
-  <%= f.text_field :priceperweight %>
-  </p>
-  
+
   <%= f.submit %>
  
 <% end %>
-
+          </form>
+        </div>
+      </div>
+    </div>
+    
+<br>
 <%= link_to "トップページ", root_path %>
+
+    <!--bootstrapで使用するコード-->
+    <!--<div class="container">-->
+    <!--  <div class="panel panel-default">-->
+    <!--    <div class="panel-heading">新規登録フォーム</div>-->
+    <!--    <div class="panel-body">-->
+    <!--      <form>-->
+    <!--        <div class="form-group">-->
+    <!--          <label class="control-label">メーカー</label>-->
+    <!--          <input class="form-control" type="text">-->
+    <!--        </div>-->
+    <!--        <button class="btn btn-default">送信</button>-->
+    <!--      </form>-->
+    <!--    </div>-->
+    <!--  </div>-->
+    <!--</div>-->
