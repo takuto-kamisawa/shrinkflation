@@ -1,8 +1,8 @@
-    <div class="container">
-      <div class="panel panel-default">
-        <div class="panel-heading">新規登録フォーム</div>
-        <div class="panel-body">
-          <form>
+    <!--<div class="container">-->
+    <!--  <div class="panel panel-default">-->
+    <!--    <div class="panel-heading">新規登録フォーム</div>-->
+    <!--    <div class="panel-body">-->
+    <!--      <form>-->
 <%= form_for @product do |f| %>
   <p>
   <%= f.label :maker_id , "メーカー" %>
@@ -25,14 +25,19 @@
   <%= f.label :price , "価格(円)" %>
   <%= f.text_field :price %>
   </p>
+  
+  <!--<p>-->
+  <!--<%= f.label :priceperweight , "グラム単価" %>-->
+  <!--<%= f.text_field :priceperweight %>-->
+  <!--</p>-->
 
   <%= f.submit %>
  
 <% end %>
-          </form>
-        </div>
-      </div>
-    </div>
+    <!--      </form>-->
+    <!--    </div>-->
+    <!--  </div>-->
+    <!--</div>-->
     
 <br>
 <%= link_to "トップページ", root_path %>
