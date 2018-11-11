@@ -1,8 +1,8 @@
 class Product < ApplicationRecord
-    belongs_to :maker
+  belongs_to :maker
     
-     def priceperweight
-#     price / NET_weight
+  def priceperweight
+    price.to_f / net_weight
     #   before_create do
     #     self.priceperweight = price / NET_weight
     #   end
