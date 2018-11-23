@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+[
+  { name: 'カルビー' },
+  { name: 'ブルボン' }
+].each do |maker_set|
+  maker = Maker.find_or_create_by(
+    name: maker_set[:name]
+  )
+  maker.save!
+end
