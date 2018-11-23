@@ -19,7 +19,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-     params.require(:product).permit(:maker_id, :name, :NET_weight, :price, :priceperweight)
+     params.require(:product).permit(:maker_id, :name, :net_weight, :price)
   end
-end   
-#<% select :name, :maker, :NET_weight, :price, :priceperweight  %>
+end
