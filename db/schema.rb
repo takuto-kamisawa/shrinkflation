@@ -12,13 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2018_11_11_052344) do
 
-  create_table "makers", force: :cascade do |t|
+  create_table "makers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "products", force: :cascade do |t|
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.integer "maker_id"
     t.integer "net_weight"
