@@ -6,11 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 [
-  { name: 'カルビー' },
-  { name: 'ブルボン' }
+  { name: 'カルビー', id: 1 },
+  { name: 'ブルボン', id: 2 }
 ].each do |maker_set|
   maker = Maker.find_or_create_by(
-    name: maker_set[:name]
+    name: maker_set[:name],
+    id: maker_set[:id]
   )
-  maker.save!
+end
+
+[
+  { name: 'ポテトチップス', maker_id: 1, net_weight: 100, price: 100 }
+].each do |product_set|
+  product = Product.find_or_create_by(
+    name: product_set[:name],
+    maker_id: product_set[:maker_id],
+    net_weight: product_set[:net_weight],
+    price: product_set[:price]
+  )
 end
