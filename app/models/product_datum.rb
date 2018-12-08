@@ -1,2 +1,0 @@
-class ProductDatum < ApplicationRecord
-end
