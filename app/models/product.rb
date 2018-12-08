@@ -1,8 +1,9 @@
 class Product < ApplicationRecord
   belongs_to :maker
-    
-  def priceperweight
-    price.to_f / net_weight
+  has_many :product_details
+  
+  def recent_product_detail
+    product_details.first
   end
-     
+  
 end
