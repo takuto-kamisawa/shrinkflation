@@ -4,6 +4,7 @@ class CreateProductDetails < ActiveRecord::Migration[5.2]
       t.integer :product_id
       t.integer :net_weight
       t.integer :price
+      t.date :sale_date
       t.timestamps
     end
   end

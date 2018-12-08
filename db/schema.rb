@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2018_11_29_041056) do
     t.integer "product_id"
     t.integer "net_weight"
     t.integer "price"
+    t.date "sale_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

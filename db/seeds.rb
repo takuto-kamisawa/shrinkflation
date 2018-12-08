@@ -16,20 +16,30 @@
 end
 
 [
-  { id: 1, name: 'ポテトチップス', maker_id: 1, net_weight: 100, price: 100 }
+  { id: 1, name: 'ポテトチップス', maker_id: 1 }
 ].each do |product_set|
   product = Product.find_by(id: product_set[:id])
   unless product
-    Product.create(
+    Product.create!(
       id: product_set[:id],
       name: product_set[:name],
       maker_id: product_set[:maker_id]
     )
-    
-    ProductDetail.create(
-      product_id: product_set[:id],
+  end
+end
+
+[
+  { id: 1, product_id: 1, net_weight: 120, price: 100, sale_date: Date.current - 1.year },
+  { id: 2, product_id: 1, net_weight: 100, price: 100, sale_date: Date.current }
+].each do |product_set|
+  product_detail = ProductDetail.find_by(id: product_set[:id])
+  unless product_detail
+    ProductDetail.create!(
+      id: product_set[:id],
+      product_id: product_set[:product_id],
       net_weight: product_set[:net_weight],
-      price: product_set[:price]
+      price: product_set[:price],
+      sale_date: product_set[:sale_date]
     )
   end
 end
