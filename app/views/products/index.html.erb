@@ -28,9 +28,15 @@
 <tr>
   <th scope="row"><%= product.maker.name %></th>
   <td><%= product.name %></td>
-      <td><%= product.net_weight %></td>
-  <td><%= product.price %></td>
   <td><%= product.priceperweight %></td>
+  <td>###</td>
+</tr>
+<% end %>
+<% @product_details.each do |detail| %>
+<tr>
+  <th scope="row"><%= detail.maker.name %></th>
+  <td><%= product.net_weight %></td>
+  <td><%= product.price %></td>
   <td>###</td>
 </tr>
 <% end %>
