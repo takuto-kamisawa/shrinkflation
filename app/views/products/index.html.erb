@@ -24,15 +24,20 @@
 </tr>
 </thead>
 <tbody>
-<% @products.each do |product| %>
+<%
+  @products.each do |product|
+    rowspan = product.product_details.count
+%>
 <tr>
-  <th scope="row"><%= product.maker.name %></th>
-  <td><%= product.name %></td>
-  <td><%= product.recent_product_detail.net_weight %></td>
-  <td><%= product.recent_product_detail.price %></td>
-  <td><%= product.recent_product_detail.priceperweight %></td>
-  <td>###</td>
-</tr>
+  <th scope="row" rowspan="<%= rowspan %>"><%= product.maker.name %></th>
+  <td rowspan="<%= rowspan %>"><%= product.name %></td>
+  <% product.product_details.each_with_index do |detail, i| %>
+    <td><%= detail.net_weight %></td>
+    <td><%= detail.price %></td>
+    <td><%= detail.priceperweight %></td>
+    <td>###</td>
+    </tr>
+  <% end %>
 <% end %>
 </tbody>
 </table>
