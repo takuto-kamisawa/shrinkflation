@@ -2,7 +2,7 @@
 
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.joins(:product_details).select('products.*, product_details.*')
   end
 
   def show

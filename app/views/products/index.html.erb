@@ -3,11 +3,6 @@
 
 <%= link_to "新規登録", new_product_path %>
 
-<p>
-  <% @products.each do |product| %>
-  <% end %>
-</p>
-
 
 <section class="bg-light text-center py-5">
   <h2 class="mb-5">一覧(仮)</h2>
@@ -17,10 +12,11 @@
 <tr>
   <th scope="col">メーカー</th>
   <th scope="col">商品名</th>
-      <th scope="col">内容量</th>
+  <th scope="col">発売日</th>
+  <th scope="col">内容量</th>
   <th scope="col">価格</th>
   <th scope="col">グラム単価</th>
-      <th scope="col">実質値上げ率(対3年前比)</th>
+  <th scope="col">実質値上げ率(対3年前比)</th>
 </tr>
 </thead>
 <tbody>
@@ -28,9 +24,10 @@
 <tr>
   <th scope="row"><%= product.maker.name %></th>
   <td><%= product.name %></td>
-  <td><%= product.recent_product_detail.net_weight %></td>
-  <td><%= product.recent_product_detail.price %></td>
-  <td><%= product.recent_product_detail.priceperweight %></td>
+  <td><%= product.sale_date %></td>
+  <td><%= product.net_weight %></td>
+  <td><%= product.price %></td>
+  <td><%= product.price.to_f / product.net_weight %></td>
   <td>###</td>
 </tr>
 <% end %>
