@@ -17,10 +17,11 @@
 <tr>
   <th scope="col">メーカー</th>
   <th scope="col">商品名</th>
-      <th scope="col">内容量</th>
+  <th scope="col">年月</th>
+  <th scope="col">内容量</th>
   <th scope="col">価格</th>
   <th scope="col">グラム単価</th>
-      <th scope="col">実質値上げ率(対3年前比)</th>
+      <th scope="col">実質値上げ率（倍）</th>
 </tr>
 </thead>
 <tbody>
@@ -32,10 +33,11 @@
   <th scope="row" rowspan="<%= rowspan %>"><%= product.maker.name %></th>
   <td rowspan="<%= rowspan %>"><%= product.name %></td>
   <% product.product_details.each_with_index do |detail, i| %>
+    <td><%= detail.sale_date.strftime("%Y年%m月") %></td>
     <td><%= detail.net_weight %></td>
     <td><%= detail.price %></td>
     <td><%= detail.priceperweight %></td>
-    <td>###</td>
+    <td><%= (i < product.product_details.length - 1) ? detail.priceperweight / product.product_details[i + 1].priceperweight : '-' %></td>
     </tr>
   <% end %>
 <% end %>
