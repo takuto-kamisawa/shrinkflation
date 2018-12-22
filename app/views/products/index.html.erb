@@ -36,8 +36,8 @@
     <td><%= detail.sale_date.strftime("%Y年%m月") %></td>
     <td><%= detail.net_weight %></td>
     <td><%= detail.price %></td>
-    <td><%= detail.priceperweight %></td>
-    <td><%= (i < product.product_details.length - 1) ? detail.priceperweight / product.product_details[i + 1].priceperweight : '-' %></td>
+    <td><%= detail.priceperweight.truncate(2) %></td>
+    <td><%= (i < product.product_details.length - 1) ? (detail.priceperweight / product.product_details[i + 1].priceperweight).truncate(2) : '-' %></td>
     </tr>
   <% end %>
 <% end %>

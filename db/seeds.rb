@@ -16,7 +16,8 @@
 end
 
 [
-  { id: 1, name: 'ポテトチップス', maker_id: 1 }
+  { id: 1, name: 'ポテトチップス', maker_id: 1 },
+  { id: 2, name: 'じゃがりこ', maker_id: 1 }
 ].each do |product_set|
   product = Product.find_by(id: product_set[:id])
   unless product
@@ -30,7 +31,10 @@ end
 
 [
   { id: 1, product_id: 1, net_weight: 120, price: 100, sale_date: Date.current - 1.year },
-  { id: 2, product_id: 1, net_weight: 100, price: 100, sale_date: Date.current }
+  { id: 2, product_id: 1, net_weight: 100, price: 100, sale_date: Date.current },
+  { id: 3, product_id: 2, net_weight: 150, price: 100, sale_date: Date.current - 2.year },
+  { id: 4, product_id: 2, net_weight: 120, price: 100, sale_date: Date.current - 1.year },
+  { id: 5, product_id: 2, net_weight: 100, price: 100, sale_date: Date.current }
 ].each do |product_set|
   product_detail = ProductDetail.find_by(id: product_set[:id])
   unless product_detail
